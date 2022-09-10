@@ -56,10 +56,9 @@ async def main():
     rooms = []
     for device in devices:
         device_info = await get_properties(access_token, device['product_id'], device['id'])
-        if 'groupsArray' in device_info and len(device_info['groupsArray']) > 0:
-            rooms.append(device_info)
+        rooms.append(device_info)
     with open("cbyge_rooms.json","w") as file:
-        file.write(json.dumps({'data': rooms},indent=4))
+        file.write(json.dumps({'rooms': rooms, 'devices':devices},indent=4))
     print("finished getting devices, check cbyge_rooms.json for results")
 
 asyncio.run(main())
