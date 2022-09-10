@@ -52,8 +52,6 @@ async def main():
     user_auth = await authenticate(username, password)
     access_token = user_auth['access_token']
     user_id = user_auth['user_id']
-    with open("cbyge_user_info.json","w") as file:
-        file.write(json.dumps(user_auth,indent=4))
     devices = await get_devices(access_token, user_id)
     rooms = []
     for device in devices:
