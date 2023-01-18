@@ -99,5 +99,5 @@ def main(data):
 
 with open("cync_rooms.json","r") as f:
     data=json.load(f)
-output = main(data)
+output = json.dumps(main(data),indent = 2)
 print(output)
