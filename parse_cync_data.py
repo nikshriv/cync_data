@@ -97,7 +97,7 @@ def main(data):
     else:
         return {'rooms':rooms, 'devices':devices, 'home_devices':home_devices, 'home_controllers':home_controllers, 'switchID_to_homeID':switchID_to_homeID}
 
-with open("data.json","r") as f:
+with open("cync_rooms.json","r") as f:
     data=json.load(f)
 output = main(data)
 print(output)
