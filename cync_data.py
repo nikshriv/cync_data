@@ -57,8 +57,8 @@ async def main():
     for device in devices:
         device_info = await get_properties(access_token, device['product_id'], device['id'])
         rooms.append({'device':device, 'device_info':device_info})
-    with open("cbyge_rooms.json","w") as file:
+    with open("cync_data.json","w") as file:
         file.write(json.dumps({'data': rooms},indent=4))
-    print("finished getting devices, check cbyge_rooms.json for results")
+    print("finished getting devices, check cync_data.json for results")
 
 asyncio.run(main())
