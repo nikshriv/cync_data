@@ -97,7 +97,7 @@ def main(data):
     else:
         return {'rooms':rooms, 'devices':devices, 'home_devices':home_devices, 'home_controllers':home_controllers, 'switchID_to_homeID':switchID_to_homeID}
 
-with open("cync_rooms.json","r") as f:
+with open("cync_data.json","r") as f:
     data=json.load(f)
 output = json.dumps(main(data),indent = 2)
 print(output)
