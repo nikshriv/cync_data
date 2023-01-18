@@ -100,4 +100,6 @@ def main(data):
 with open("cync_data.json","r") as f:
     data=json.load(f)
 output = json.dumps(main(data),indent = 2)
-print(output)
+with open("parsed_cync_data.json","w") as file:
+    file.write(output)
+print("finished parsing cync_data.json, check parsed_cync_data.json for results")
