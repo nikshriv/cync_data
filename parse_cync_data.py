@@ -84,7 +84,7 @@ def main(data):
                             'subgroups' : [home_id + '-' + str(subgroup) for subgroup in room.get('subgroupIDArray',[])]
                         }
                 for room,room_info in rooms.items():
-                    if not room_info.get("isSubgroup",False) and len(subgroups := room_info.get("subgroups",[])) > 0:
+                    if not room_info.get("isSubgroup",False) and len(subgroups := room_info.get("subgroups",[]).copy()) > 0:
                         for subgroup in subgroups:
                             if rooms.get(subgroup,None):
                                 rooms[subgroup]["parent_room"] = room_info["name"]
